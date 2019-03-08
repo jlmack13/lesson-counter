@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800|Open+Sans:300i,400,700');
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "left header header header right"
+                         "left info info info right"
+                         "left content content content right"
+                         "left content content content right";
+}
+
+nav {
+    display: grid;
+    justify-items: end;
+}
+
+.icon-menu {
+    display: grid;
+    text-decoration: none;
+    list-style: none;
+    padding: 5px;
+}
+
+.header {
+    grid-area: header;
+    font: 800 42px 'Montserrat', sans-serif;
+    margin-bottom: 0;
+    margin-top: 100px;
+}
+
+.instructions {
+    grid-area: info;
+    font: italic 300 16px 'Open Sans', sans-serif;
+    margin-bottom: 40px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+    grid-area: content;
+    max-width: 960px;
+}
+
+.coffee {
+    width: 100px;
+    height: 100px;
+}
+
+.coffee:hover {
+    cursor: pointer;
+}
+
+.todo {
+    background-image: url(coffee_line.png);
+}
+
+.done {
+    background-image: url(coffee_colorized_with_line.png);
+}

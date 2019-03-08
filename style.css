@@ -1,0 +1,61 @@
+main {
+    display: grid;
+    justify-items: center;
+}
+
+
+#jars {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-gap: 20px;
+}
+
+#jar-left:hover, #jar-right:hover {
+    cursor: pointer;
+}
+
+.jar-header {
+    grid-column: span 2;
+}
+
+.block {
+    border: 5px solid black;
+    border-top: none;
+    border-bottom: 1px solid grey;
+    height: 30px;
+    display: grid;
+    justify-items: end;
+    align-items: center;
+}
+
+.finished-block {
+    border: 5px solid black;
+    border-top: none;
+    border-bottom: 1px solid grey;
+    height: 30px;
+    display: grid;
+    justify-items: end;
+    align-items: center;
+}
+
+/* Click Styles */
+.todo {
+    background-color: magenta;
+}
+
+.incomplete {
+    background: none;
+}
+
+.done {
+    background-color: aquamarine;
+}
+
+/* Beaker Styles */
+.first {
+    border-top: solid 5px black;
+}
+
+.last {
+    border-bottom: solid 5px black;
+}

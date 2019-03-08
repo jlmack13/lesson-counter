@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="coffee.css">
+    <title>Coffee Cup Daily Lesson Counter</title>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="icon-menu">🍯</li>
+            <li class="icon-menu">☕</li>
+        </ul>
+    </nav> 
+    <main>
+        <h1 class="header">Daily Lesson Tracker</h1>
+        <p class="instructions">Each coffee cup represents a lesson. Each time you complete a lesson,
+            click on a coffee cup to mark it complete. When you've completed all 
+            10 coffee cups, you've reached your goal for the day! 
+        </p>
+        <div id="container">
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+            <div class="coffee todo"></div>
+        </div>
+    </main>
+    <script>
+        const coffeeCups = Array.from(document.querySelectorAll(".coffee"));
+        function completeBlock (e) {
+            const coffee = e.target;
+            coffee.classList.toggle('todo');
+            coffee.classList.toggle('done');
+            const cups = Array.from(document.querySelectorAll(".done"));
+            if (cups.length === 10) {
+                alert("Congrats! You've met your goal for the day!");
+            }
+        }
+
+        coffeeCups.map( function(coffee) {
+            coffee.addEventListener('click', completeBlock)
+        })
+    </script>
+</body>
+</html>
+
+<!-- TO DO -->
+<!-- * When the last coffee cup is clicked, do something (an alert, confetti, something).
+     * Add a menu bar at the top that changes the type of the icon (honey jar, coffee cup, etc.)
+     * Let the user change the number of lessons?
+     * Create Static Sidebar
+     * Think about how to make this persistent
+do  -->

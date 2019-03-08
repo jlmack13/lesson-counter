@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Tulip Counter</title>
+</head>
+<body>
+    <main>
+        <section id="jars">
+           <div id="jar-left">
+                <h2 class="jar-header">TO-DO:</h2>
+                <div class="block todo first">1</div>
+                <div class="block todo">2</div>
+                <div class="block todo">3</div>
+                <div class="block todo">4</div>
+                <div class="block todo">5</div>
+                <div class="block todo">6</div>
+                <div class="block todo">7</div>
+                <div class="block todo">8</div>
+                <div class="block todo">9</div>
+                <div class="block todo last">10</div>
+            </div>
+            <div id="jar-right">
+                <h2 class="jar-header">DONE:</h2>
+                <div class="finished-block incomplete first">1</div>
+                <div class="finished-block incomplete">2</div>
+                <div class="finished-block incomplete">3</div>
+                <div class="finished-block incomplete">4</div>
+                <div class="finished-block incomplete">5</div>
+                <div class="finished-block incomplete">6</div>
+                <div class="finished-block incomplete">7</div>
+                <div class="finished-block incomplete">8</div>
+                <div class="finished-block incomplete">9</div>
+                <div class="finished-block incomplete last">10</div>
+            </div>
+        </section>
+    </main>
+    <script>
+        //select each column and add an event listener to each
+        const left = document.querySelector("#jar-left");
+        const right = document.querySelector("#jar-right");
+        
+        left.addEventListener('click', blockComplete);
+        right.addEventListener('click', blockIncomplete);
+
+        //function for when left column is clicked. last "filled" item 
+        // in left column should "empty" and first "empty" item in the right 
+        // column should "fill"
+        function blockComplete () {
+            const todos = Array.from(document.querySelectorAll('.todo'));
+            const lastTodo = todos.shift();
+            lastTodo.classList.toggle('todo');
+            lastTodo.classList.toggle('finished');
+
+            const dones = Array.from(document.querySelectorAll('.incomplete'));
+            const lastDone = dones.pop();
+            lastDone.classList.toggle('incomplete');
+            lastDone.classList.toggle('done');
+
+        }
+
+        //function for when rig todoht column is clicked. reverse of the above.
+        function blockIncomplete () {
+            const dones = Array.from(document.querySelectorAll('.done'));
+            const firstDone = dones.shift();
+            firstDone.classList.toggle('done');
+            firstDone.classList.toggle('incomplete');
+
+            const todos = Array.from(document.querySelectorAll('.finished'));
+            const firstFinished = todos.pop();
+            firstFinished.classList.toggle('finished');
+            firstFinished.classList.toggle('todo');
+
+        }
+    </script>
+</body>
+</html>
