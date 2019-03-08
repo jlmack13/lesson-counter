@@ -15,6 +15,10 @@ nav {
     justify-items: end;
 }
 
+.menu {
+    font-size: 24px;
+}
+
 .icon-menu {
     display: grid;
     text-decoration: none;
@@ -26,7 +30,6 @@ nav {
     grid-area: header;
     font: 800 42px 'Montserrat', sans-serif;
     margin-bottom: 0;
-    margin-top: 100px;
 }
 
 .instructions {
